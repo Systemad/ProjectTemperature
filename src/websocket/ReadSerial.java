@@ -5,8 +5,15 @@ import javax.websocket.Session;
 
 public class ReadSerial {
 
+    private Session session;
+
+
     public ReadSerial(Session session){
+
+        this.session = session;
+
         TempServer tempServer = new TempServer();
+
 
         // Fetches ports and prints them out
         SerialPort[] ports = SerialPort.getCommPorts();
@@ -33,12 +40,12 @@ public class ReadSerial {
         serialPort.setComPortTimeouts(SerialPort.TIMEOUT_SCANNER, 0, 0);
         Scanner scanner = new Scanner(serialPort.getInputStream());
 
+
         // As long as there it reads from Serial it wont stop looping
         while(scanner.hasNextLine()){
             try{
                 String line = scanner.nextLine();
-                String test = "hello";
-                tempServer.handleMessage(test, session);
+                tempServer.handleMessage(line, session);
                 System.out.println(line);
             }catch(Exception e){
                 System.out.println("something wrong");
