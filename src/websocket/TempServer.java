@@ -1,7 +1,5 @@
 package websocket;
 
-import sun.plugin2.message.Message;
-
 import javax.websocket.*;
 import javax.websocket.server.ServerEndpoint;
 import java.io.IOException;
@@ -12,7 +10,7 @@ public class TempServer {
 
     @OnOpen
     public void open(Session session) throws IOException, EncodeException {
-        ReadSerial readSerial = new ReadSerial(Session);
+        ReadSerial readSerial = new ReadSerial(session);
         session.getBasicRemote().sendText("Showing Temperatures");
     }
 

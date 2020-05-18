@@ -10,11 +10,14 @@ public class ReadSerial {
 
     private Session session;
 
+    /*
     public ReadSerial(Session session){
         this.session = session;
     }
+     */
 
-    public void ReadSerial(){
+    public ReadSerial(Session session){
+        this.session = session;
 
         SerialPort[] ports = SerialPort.getCommPorts();
         System.out.println("Select a port:");
@@ -28,7 +31,6 @@ public class ReadSerial {
 
         // Set selected Serial Port and checks if its open
         SerialPort serialPort = ports[chosenPort - 1];
-        //SerialPort serialPort = ports[3];
 
         if(serialPort.openPort())
             System.out.println("Port opened successfully.");
@@ -37,19 +39,20 @@ public class ReadSerial {
             return;
         }
 
-        //test
         // Sets correct baudrate in order to properly read serial output
         serialPort.setComPortParameters(115200, 8, 1, SerialPort.NO_PARITY);
         serialPort.setComPortTimeouts(SerialPort.TIMEOUT_SCANNER, 0, 0);
         Scanner scanner = new Scanner(serialPort.getInputStream());
 
+        TempServer tempServer = new TempServer();
         // As long as there in output in Serial Port int wont stop looping
         while(scanner.hasNextLine()){
             try{
                 String line = scanner.nextLine();
-                //tempServer.handleMessage(line, session);
+                String test = "hello";
+
+                tempServer.handleMessage(test, session);
                 System.out.println(line);
-                //String line = scanner.nextLine();
                 //message = scanner.nextLine();
             }catch(Exception e){
                 System.out.println("something wrong");
