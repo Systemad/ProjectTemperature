@@ -7,14 +7,11 @@ import java.io.IOException;
 
 @ServerEndpoint("/ws")
 public class TempServer {
-    //private Session Session;
 
     @OnOpen
     public void open(Session session) throws IOException, EncodeException {
-        //ReadSerial readSerial = new ReadSerial(session);
-        session.getBasicRemote().sendText("Showing Temperatures");
         ReadSerial readSerial = new ReadSerial(session);
-
+        session.getBasicRemote().sendText("Showing Temperatures");
     }
 
     @OnMessage

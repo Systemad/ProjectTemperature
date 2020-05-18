@@ -1,10 +1,7 @@
 package websocket;
 import java.util.Scanner;
 import com.fazecast.jSerialComm.*;
-//import com.fazecast.jSerialComm.SerialPort;
-
 import javax.websocket.Session;
-
 
 public class ReadSerial {
 
@@ -24,7 +21,6 @@ public class ReadSerial {
 
         // Set selected Serial Port and checks if its open
         SerialPort serialPort = ports[chosenPort - 1];
-
         if(serialPort.openPort())
             System.out.println("Port opened successfully.");
         else {
@@ -37,22 +33,17 @@ public class ReadSerial {
         serialPort.setComPortTimeouts(SerialPort.TIMEOUT_SCANNER, 0, 0);
         Scanner scanner = new Scanner(serialPort.getInputStream());
 
-
         // As long as there it reads from Serial it wont stop looping
         while(scanner.hasNextLine()){
             try{
                 String line = scanner.nextLine();
                 String test = "hello";
-
                 tempServer.handleMessage(test, session);
                 System.out.println(line);
-
             }catch(Exception e){
                 System.out.println("something wrong");
                 e.printStackTrace();
             }
         }
-
     }
-
 }
