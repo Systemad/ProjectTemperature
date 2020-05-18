@@ -1,31 +1,24 @@
 package websocket;
 import java.util.Scanner;
-//import com.fazecast.jSerialComm.*;
-import com.fazecast.jSerialComm.SerialPort;
+import com.fazecast.jSerialComm.*;
+//import com.fazecast.jSerialComm.SerialPort;
 
 import javax.websocket.Session;
 
 
 public class ReadSerial {
 
-    private Session session;
-
-    /*
     public ReadSerial(Session session){
-        this.session = session;
-    }
-     */
+        TempServer tempServer = new TempServer();
 
-    public ReadSerial(Session session){
-        this.session = session;
-
+        // Fetches ports and prints them out
         SerialPort[] ports = SerialPort.getCommPorts();
-        System.out.println("Select a port:");
-        int i = 1; // Prints Ports
+        System.out.println("Select a port: ");
+        int i = 1;
         for(SerialPort port : ports)
             System.out.println(i++ +  ": " + port.getSystemPortName());
 
-        // new Scanner to choose ports
+        // New Scanner to choose ports
         Scanner s = new Scanner(System.in);
         int chosenPort = s.nextInt();
 
@@ -44,8 +37,8 @@ public class ReadSerial {
         serialPort.setComPortTimeouts(SerialPort.TIMEOUT_SCANNER, 0, 0);
         Scanner scanner = new Scanner(serialPort.getInputStream());
 
-        TempServer tempServer = new TempServer();
-        // As long as there in output in Serial Port int wont stop looping
+
+        // As long as there it reads from Serial it wont stop looping
         while(scanner.hasNextLine()){
             try{
                 String line = scanner.nextLine();
@@ -53,7 +46,7 @@ public class ReadSerial {
 
                 tempServer.handleMessage(test, session);
                 System.out.println(line);
-                //message = scanner.nextLine();
+
             }catch(Exception e){
                 System.out.println("something wrong");
                 e.printStackTrace();

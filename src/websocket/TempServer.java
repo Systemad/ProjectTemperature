@@ -1,17 +1,20 @@
 package websocket;
 
 import javax.websocket.*;
+import com.fazecast.jSerialComm.*;
 import javax.websocket.server.ServerEndpoint;
 import java.io.IOException;
 
 @ServerEndpoint("/ws")
 public class TempServer {
-    private Session Session;
+    //private Session Session;
 
     @OnOpen
     public void open(Session session) throws IOException, EncodeException {
-        ReadSerial readSerial = new ReadSerial(session);
+        //ReadSerial readSerial = new ReadSerial(session);
         session.getBasicRemote().sendText("Showing Temperatures");
+        ReadSerial readSerial = new ReadSerial(session);
+
     }
 
     @OnMessage
