@@ -32,11 +32,11 @@ public class ReadSerial {
         serialPort.setComPortTimeouts(SerialPort.TIMEOUT_SCANNER, 0, 0);
         Scanner scanner = new Scanner(serialPort.getInputStream());
 
-        // As long as there it reads from Serial it wont stop looping
+        // As long as there it reads from Serial it wont stop
         while(scanner.hasNextLine()){
             try{
-                String line = scanner.nextLine();
-                line = "Temperature: " + line + " C";
+                String line = "Temperature: " + scanner.nextLine() + " °C"; //scanner.nextLine();
+                //line = "Temperature: " + line + " °C";
                 session.getBasicRemote().sendText(line);
                 System.out.println(line);
             }catch(Exception e){
