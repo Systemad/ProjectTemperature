@@ -7,13 +7,14 @@ import javax.websocket.Session;
 public class ReadSerial {
 
     public ReadSerial(Session session) throws IOException {
-        // Fetches ports and prints them out
+        // Prints ports
         SerialPort[] ports = SerialPort.getCommPorts();
         System.out.println("Select a port: ");
         int i = 1;
         for(SerialPort port : ports)
             System.out.println(i++ +  ": " + port.getSystemPortName());
 
+        // Not working - selecting manual port for now
         // New Scanner to choose ports
         //Scanner s = new Scanner(System.in);
         //int chosenPort = s.nextInt();
@@ -32,11 +33,10 @@ public class ReadSerial {
         serialPort.setComPortTimeouts(SerialPort.TIMEOUT_SCANNER, 0, 0);
         Scanner scanner = new Scanner(serialPort.getInputStream());
 
-        // As long as there it reads from Serial it wont stop
+        // Reads serial and sends it to websocket
         while(scanner.hasNextLine()){
             try{
-                String line = "Temperature: " + scanner.nextLine() + " °C"; //scanner.nextLine();
-                //line = "Temperature: " + line + " °C";
+                String line = "Temperature: " + scanner.nextLine() + " °C";
                 session.getBasicRemote().sendText(line);
                 System.out.println(line);
             }catch(Exception e){
