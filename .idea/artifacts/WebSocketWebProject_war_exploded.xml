@@ -6,6 +6,12 @@
         <element id="directory" name="classes">
           <element id="module-output" name="WebSocketWebProject" />
         </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="javax.websocket:javax.websocket-api:1.1" />
+          <element id="library" level="project" name="jSerialComm-2.6.22" />
+          <element id="library" level="project" name="jSerialComm-2.6.21" />
+          <element id="library" level="project" name="jSerialComm-2.6.2" />
+        </element>
       </element>
       <element id="javaee-facet-resources" facet="WebSocketWebProject/web/Web" />
     </root>

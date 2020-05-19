@@ -1,20 +1,12 @@
 package websocket;
+import java.io.IOException;
 import java.util.Scanner;
 import com.fazecast.jSerialComm.*;
 import javax.websocket.Session;
 
 public class ReadSerial {
 
-    private Session session;
-
-
-    public ReadSerial(Session session){
-
-        this.session = session;
-
-        TempServer tempServer = new TempServer();
-
-
+    public ReadSerial(Session session) throws IOException {
         // Fetches ports and prints them out
         SerialPort[] ports = SerialPort.getCommPorts();
         System.out.println("Select a port: ");
@@ -23,11 +15,11 @@ public class ReadSerial {
             System.out.println(i++ +  ": " + port.getSystemPortName());
 
         // New Scanner to choose ports
-        Scanner s = new Scanner(System.in);
-        int chosenPort = s.nextInt();
+        //Scanner s = new Scanner(System.in);
+        //int chosenPort = s.nextInt();
 
         // Set selected Serial Port and checks if its open
-        SerialPort serialPort = ports[chosenPort - 1];
+        SerialPort serialPort = ports[2 - 1];
         if(serialPort.openPort())
             System.out.println("Port opened successfully.");
         else {
@@ -40,12 +32,12 @@ public class ReadSerial {
         serialPort.setComPortTimeouts(SerialPort.TIMEOUT_SCANNER, 0, 0);
         Scanner scanner = new Scanner(serialPort.getInputStream());
 
-
         // As long as there it reads from Serial it wont stop looping
         while(scanner.hasNextLine()){
             try{
                 String line = scanner.nextLine();
-                tempServer.handleMessage(line, session);
+                line = "Temperature: " + line + " C";
+                session.getBasicRemote().sendText(line);
                 System.out.println(line);
             }catch(Exception e){
                 System.out.println("something wrong");
