@@ -18,13 +18,14 @@
     ws.onmessage = function (event) {
         console.log(event.data);
         document.getElementById("log").value += "[" + timestamp() + "] " + event.data + "\n";
-        document.getElementById("log").scrollTop = document.getElementById("log").scrollHeight
+        document.getElementById("log").scrollTop = document.getElementById("log").scrollHeight;
     }
 
     function timestamp() {
-        var d = new Date(), minutes = d.getMinutes();
+        var d = new Date(), minutes = d.getMinutes(), seconds = d.getSeconds();
         if (minutes < 10) minutes = '0' + minutes;
-        return d.getHours() + ':' + minutes;
+        if (seconds < 10) seconds = '0' + seconds;
+        return d.getHours() + ':' + minutes + ':' + seconds;
     }
 </script>
 </body>
