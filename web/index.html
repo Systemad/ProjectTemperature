@@ -2,18 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Chat</title>
+    <title>Temperature Log</title>
 </head>
 <body style="margin:0;">
+
+<h1>Temperature Log (Real time)</h1>
 <textarea title="Temperature log" id="log" readonly
-          style="display: block; width: 100%; height: 400px; resize: none; margin: 0;
-          padding: 0; border: 0;"></textarea>
+          style="display: block; width: 50%; height: 400px; resize: none; margin: 0;
+          padding: 0; border: 0; background-color: lavender">
+
+</textarea>
+
 <script>
 
     var ws = new WebSocket("ws://localhost:8080/WebSocketWebProject_war_exploded/ws");
     ws.onmessage = function (event) {
         console.log(event.data);
         document.getElementById("log").value += "[" + timestamp() + "] " + event.data + "\n";
+        document.getElementById("log").scrollTop = document.getElementById("log").scrollHeight
     }
 
     function timestamp() {
