@@ -38,12 +38,14 @@ public class ReadSerial {
         // Reads serial and sends it to websocket
         while(scanner.hasNextLine()){
             try{
-                String line = "Temperature: " + scanner.nextLine() + " °C";
+                String line = "Arduino (Real time): " + scanner.nextLine() + " °C";
                 session.getBasicRemote().sendText(line);
+                //session.getBasicRemote().sendText("Humidity 45%");
 
                 String tempStr = scanner.nextLine();
                 float f = Float.parseFloat(tempStr);
                 r.updateTemp(f);
+                r.fetchData(session);
                 //System.out.println(line);
             }catch(Exception e){
                 System.out.println("something wrong");
