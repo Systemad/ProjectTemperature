@@ -6,10 +6,12 @@ import javax.websocket.Session;
 
 public class ReadSerial {
 
+    Repository2 r = new Repository2();
+
     public ReadSerial(Session session) throws IOException {
         // Prints ports
         SerialPort[] ports = SerialPort.getCommPorts();
-        System.out.println("Select a port: ");
+        //System.out.println("Select a port: ");
         int i = 1;
         for(SerialPort port : ports)
             System.out.println(i++ +  ": " + port.getSystemPortName());
@@ -20,7 +22,7 @@ public class ReadSerial {
         //int chosenPort = s.nextInt();
 
         // Set selected Serial Port and checks if its open
-        SerialPort serialPort = ports[2 - 1];
+        SerialPort serialPort = ports[1 - 1];
         if(serialPort.openPort())
             System.out.println("Port opened successfully.");
         else {
@@ -38,7 +40,11 @@ public class ReadSerial {
             try{
                 String line = "Temperature: " + scanner.nextLine() + " °C";
                 session.getBasicRemote().sendText(line);
-                System.out.println(line);
+
+                String tempStr = scanner.nextLine();
+                float f = Float.parseFloat(tempStr);
+                r.updateTemp(f);
+                //System.out.println(line);
             }catch(Exception e){
                 System.out.println("something wrong");
                 e.printStackTrace();
