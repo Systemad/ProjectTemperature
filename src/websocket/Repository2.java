@@ -55,7 +55,7 @@ public class Repository2 {
                 float temp = rs.getFloat("temperature");
 
                 //String city = rs.getString("city");
-                String hello = "Fetched from SQL: " + temp + " °C";
+                String hello = "Latest temperature from SQL: " + temp + " °C";
                 session.getBasicRemote().sendText(hello);
                 //System.out.println(hello);
                 //System.out.println("Id: " + id + " name " + temp); //+ "city" + city);
