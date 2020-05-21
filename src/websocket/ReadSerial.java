@@ -6,12 +6,13 @@ import javax.websocket.Session;
 
 public class ReadSerial {
 
-    Repository2 r = new Repository2();
+    Repository repository = new Repository();
 
-    public ReadSerial(Session session) throws IOException {
+    public ReadSerial(Session session) {
+
         // Prints ports
         SerialPort[] ports = SerialPort.getCommPorts();
-        //System.out.println("Select a port: ");
+        System.out.println("Select a port: ");
         int i = 1;
         for(SerialPort port : ports)
             System.out.println(i++ +  ": " + port.getSystemPortName());
@@ -21,6 +22,7 @@ public class ReadSerial {
         //Scanner s = new Scanner(System.in);
         //int chosenPort = s.nextInt();
 
+        // Manually for now
         // Set selected Serial Port and checks if its open
         SerialPort serialPort = ports[1 - 1];
         if(serialPort.openPort())
@@ -35,18 +37,18 @@ public class ReadSerial {
         serialPort.setComPortTimeouts(SerialPort.TIMEOUT_SCANNER, 0, 0);
         Scanner scanner = new Scanner(serialPort.getInputStream());
 
-        // Reads serial and sends it to websocket
+        // Reads serial and sends it to websocket and SQL
         while(scanner.hasNextLine()){
             try{
-                String line = "Arduino (Real time): " + scanner.nextLine() + " °C";
-                session.getBasicRemote().sendText(line);
-                //session.getBasicRemote().sendText("Humidity 45%");
+                String input = scanner.nextLine();
 
-                String tempStr = scanner.nextLine();
-                float f = Float.parseFloat(tempStr);
-                r.updateTemp(f);
-                r.fetchData(session);
-                //System.out.println(line);
+                float parseFloat = Float.parseFloat(input);
+                String realtime = "Arduino: " + parseFloat + " °C";
+                session.getBasicRemote().sendText(realtime);
+
+                // SQL
+                repository.insertData(parseFloat);
+                repository.fetchData(session);
             }catch(Exception e){
                 System.out.println("something wrong");
                 e.printStackTrace();
