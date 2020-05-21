@@ -41,7 +41,6 @@ public class ReadSerial {
         while(scanner.hasNextLine()){
             try{
                 String input = scanner.nextLine();
-
                 float parseFloat = Float.parseFloat(input);
                 String realtime = "Arduino: " + parseFloat + " °C";
                 session.getBasicRemote().sendText(realtime);
