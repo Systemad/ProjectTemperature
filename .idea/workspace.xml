@@ -21,10 +21,17 @@
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
-    <select />
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:origin/master" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d2476e3-ed4e-4cc4-b7b9-f13473a6b2a5" name="Default Changelist" comment="Add final change">
+    <list default="true" id="5d2476e3-ed4e-4cc4-b7b9-f13473a6b2a5" name="Default Changelist" comment="Test">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,7 +55,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="test" />
+        <entry key="$PROJECT_DIR$" value="develop" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -252,6 +259,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.VerySimpleDemo" />
+        <item itemvalue="Application.VerySimpleDemo" />
       </list>
     </recent_temporary>
   </component>
@@ -275,6 +283,7 @@
       <workItem from="1589928143819" duration="796000" />
       <workItem from="1589978648957" duration="1312000" />
       <workItem from="1590055209393" duration="10820000" />
+      <workItem from="1590066088717" duration="294000" />
     </task>
     <task id="LOCAL-00001" summary="Work in progress">
       <created>1589826769532</created>
@@ -353,7 +362,28 @@
       <option name="project" value="LOCAL" />
       <updated>1589991273691</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Reworked SQL send and fetch data.&#10;Fixed so fetched data from SQL and Arduino displays in each cell">
+      <created>1590066191623</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1590066191623</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Reworked SQL send and fetch data.&#10;Fixed so fetched data from SQL and Arduino displays in each cell">
+      <created>1590066383150</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1590066383150</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Test">
+      <created>1590066811409</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1590066811409</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TodoView">
@@ -373,7 +403,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -391,7 +433,9 @@
     <MESSAGE value="Add database solution" />
     <MESSAGE value="Add fetch" />
     <MESSAGE value="Add final change" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add final change" />
+    <MESSAGE value="Reworked SQL send and fetch data.&#10;Fixed so fetched data from SQL and Arduino displays in each cell" />
+    <MESSAGE value="Test" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test" />
   </component>
   <component name="WindowStateProjectService">
     <state x="655" y="93" key="#Tomcat_" timestamp="1589838503757">
@@ -490,10 +534,10 @@
     </state>
     <state x="352" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1590065995277" />
     <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1589892538663" />
-    <state x="361" y="141" key="Vcs.Push.Dialog.v2" timestamp="1589991279618">
+    <state x="361" y="141" key="Vcs.Push.Dialog.v2" timestamp="1590066817727">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="141" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1589991279618" />
+    <state x="361" y="141" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1590066817727" />
     <state x="451" y="178" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1589892460677" />
     <state x="739" y="364" key="cloudConfig.PluginsDialog" timestamp="1589838752809">
       <screen x="0" y="0" width="1920" height="1040" />
