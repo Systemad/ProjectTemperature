@@ -31,7 +31,7 @@ public class Repository {
 
             while (rs.next()) {
                 float temperature = rs.getFloat("temperature");
-                String sqlstring = "Fetched From SQL: " + temperature + " °C";
+                String sqlstring = "Fetched SQL: " + temperature + " °C";
                 session.getBasicRemote().sendText(sqlstring);
             }
         }
