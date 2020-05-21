@@ -62,31 +62,31 @@
 
 
     ws.onmessage = function (event) {
-
         const splitString =  event.data.split('Fetched');
-
         const dataObj = {};
-
         const dataObj2 = {};
-
         const newObj = {...dataObj, temp:splitString[0]};
-
         const sqlObj = {...dataObj2, temp:splitString[1]};
 
         if(event.data.includes("Arduino")){
             const realtime =  document.createElement('p');
             realtime.innerHTML = newObj.temp;
             document.getElementById('first-cell').appendChild(realtime);
+            pageScroll()
         }
 
         if(event.data.includes("SQL")){
             const realtime =  document.createElement('p');
             realtime.innerHTML = sqlObj.temp;
             document.getElementById('second-cell').appendChild(realtime);
+            pageScroll()
         }
 
+        function pageScroll() {
+            window.scrollBy(0,1);
+            scrolldelay = setTimeout(pageScroll,10);
+        }
     }
-
 </script>
 </body>
 </html>
