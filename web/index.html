@@ -78,12 +78,19 @@
             const realtime =  document.createElement('p');
             realtime.innerHTML = newObj.temp;
             document.getElementById('first-cell').appendChild(realtime);
+            pageScroll()
         }
 
         if(event.data.includes("SQL")){
             const realtime =  document.createElement('p');
             realtime.innerHTML = sqlObj.temp;
             document.getElementById('second-cell').appendChild(realtime);
+            pageScroll()
+        }
+
+        function pageScroll() {
+            window.scrollBy(0,1);
+            scrolldelay = setTimeout(pageScroll,10);
         }
 
     }
