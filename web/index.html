@@ -45,7 +45,10 @@
 <div class="container">
     <div class="header">
         <div class="first-cell">
-            <p>Temperature</p>
+            <p>Arduino (Real time)</p>
+        </div>
+        <div class="second-cell">
+            <p>SQL</p>
         </div>
     </div>
     <div class="body" id="data">
@@ -59,28 +62,30 @@
 
 
     ws.onmessage = function (event) {
-        strEdit(event.data)
-    }
 
-    function strEdit (data) {
-        const splitString =  data.split(',');
-        const customDate = new Date(splitString[1]).toString().replace('GMT+0200','');
+        const splitString =  event.data.split('Fetched');
 
         const dataObj = {};
-        const newObj = {...dataObj, temp:splitString[0],date:customDate};//spread operator ...dataObj return new object with your added keys and values, save it in newObject variable
 
+        const dataObj2 = {};
 
-        const realtime =  document.createElement('p');
-        realtime.innerHTML = newObj.temp;
-        document.getElementById('first-cell').appendChild(realtime);
+        const newObj = {...dataObj, temp:splitString[0]};
 
+        const sqlObj = {...dataObj2, temp:splitString[1]};
 
+        if(event.data.includes("Arduino")){
+            const realtime =  document.createElement('p');
+            realtime.innerHTML = newObj.temp;
+            document.getElementById('first-cell').appendChild(realtime);
+        }
 
-        const sqlbase =  document.createElement('p')
-        //humidity.innerHTML = newObj.humid += "%";
-        document.getElementById('second-cell').appendChild(sqlbase);
+        if(event.data.includes("SQL")){
+            const realtime =  document.createElement('p');
+            realtime.innerHTML = sqlObj.temp;
+            document.getElementById('second-cell').appendChild(realtime);
+        }
+
     }
-
 
 </script>
 </body>
