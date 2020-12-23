@@ -7,12 +7,14 @@ public class updateTemp {
     public updateTemp() throws InterruptedException{
         Repository r = new Repository();
         int temp;
+        int humidity;
 
         Scanner sc = new Scanner(System.in);
         while(true){
             System.out.println("What temp ");
             temp = sc.nextInt();
-            r.insertData(temp);
+            humidity = sc.nextInt();
+            r.insertData(temp, humidity);
         }
     }
 

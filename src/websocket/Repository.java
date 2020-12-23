@@ -27,12 +27,20 @@ public class Repository {
                 p.getProperty("password"));
 
             Statement stmt = con.createStatement();
+            //                                                                                  limit 10
             ResultSet rs = stmt.executeQuery("SELECT * FROM temperaturelog ORDER BY ID DESC LIMIT 1")) {
 
+            // make so it fetches last 10 entries from both humidity and temperature to a seperate table
             while (rs.next()) {
+                //                  rs.getInt
                 float temperature = rs.getFloat("temperature");
-                String sqlstring = "Fetched SQL: " + temperature + " °C";
-                session.getBasicRemote().sendText(sqlstring);
+                int humidity = rs.getInt("humidity");
+
+                String temperatureString = "Temperature" + temperature + " °C";
+                String humidityString = "Humidity: " + humidity + " %";
+
+                session.getBasicRemote().sendText(temperatureString);
+                session.getBasicRemote().sendText(humidityString);
             }
         }
         catch(SQLException | IOException e ){
@@ -40,9 +48,9 @@ public class Repository {
         }
     }
 
-    public void insertData(float temperature) {
+    public void insertData(float temperature, int humidity) {
 
-        String query = "INSERT INTO temperaturelog(temperature) VALUES (?)";
+        String query = "INSERT INTO temperaturelog(temperature, humidity) VALUES (?)";
 
         try (Connection con = DriverManager.getConnection(
                 p.getProperty("connectionString"),
@@ -51,6 +59,7 @@ public class Repository {
              PreparedStatement stmt = con.prepareStatement(query))
         {
             stmt.setFloat(1, temperature);
+            stmt.setInt(2, humidity);
             stmt.executeUpdate();
         }
         catch (Exception e) {
