@@ -41,12 +41,24 @@ public class ReadSerial {
         while(scanner.hasNextLine()){
             try{
                 String input = scanner.nextLine();
-                float parseFloat = Float.parseFloat(input);
-                String realtime = "Arduino: " + parseFloat + " °C";
-                session.getBasicRemote().sendText(realtime);
+                // Sends temperature 2 digits + humidity 2 digits and split
+                // ex temp = 25, humid 50 = 2550.
+                // then split in middle and store in seperate variables
+                String temp = input.substring(0,input.length()/2);
+                String humid = input.substring((input.length()/2));
+
+                int parseTempInt = Integer.parseInt(temp);
+                int parseHumidInt = Integer.parseInt(humid);
+
+                String realTimeTemp = "Temperature: " + parseTempInt + " °C";
+                String realTimeHumid = "Humidity: " + parseHumidInt + " °C";
+
+                session.getBasicRemote().sendText(realTimeTemp);
+                session.getBasicRemote().sendText(realTimeHumid);
 
                 // SQL
-                repository.insertData(parseFloat);
+                repository.insertData(parseTempInt);
+                repository.insertData(parseHumidInt);
                 repository.fetchData(session);
             }catch(Exception e){
                 System.out.println("something wrong");
