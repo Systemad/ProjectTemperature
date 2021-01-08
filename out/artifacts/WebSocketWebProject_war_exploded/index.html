@@ -38,14 +38,14 @@
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
-    <title>Temperature and Humidity</title>
+    <title>Monitor</title>
 </head>
 <body style="margin:0;">
 
 <div class="container">
     <div class="header">
         <div class="first-cell">
-            <p>Arduino (Real time)</p>
+            <p>Temperature</p>
         </div>
     </div>
     <div class="body" id="data">
@@ -57,14 +57,14 @@
     var ws = new WebSocket("ws://localhost:8080/WebSocketWebProject_war_exploded/ws");
 
     ws.onmessage = function (event) {
-        const splitString =  event.data.split('Fetched');
+        const splitString =  event.data; //.split('Fetched');
         const dataObj = {};
         const newObj = {...dataObj, temp:splitString[0]};
 
         if(event.data.includes("Temperature")){
-            const realtime =  document.createElement('p');
-            realtime.innerHTML = newObj.temp;
-            document.getElementById('first-cell').appendChild(realtime);
+            //const realtime =  document.createElement('p');
+            //realtime.innerHTML = newObj.temp;
+            document.getElementById('first-cell').innerHTML = splitString;
             pageScroll()
         }
 

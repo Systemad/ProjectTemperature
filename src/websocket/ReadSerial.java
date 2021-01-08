@@ -66,7 +66,7 @@ public class ReadSerial {
                 //repository.insertData(parseHumidInt);
                 repository.fetchData(session);
             }catch(Exception e){
-                System.out.println("Something went wrong");
+                System.out.println("ReadSerial: Something went wrong");
                 e.printStackTrace();
             }
         }

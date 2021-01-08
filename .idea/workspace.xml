@@ -32,14 +32,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d2476e3-ed4e-4cc4-b7b9-f13473a6b2a5" name="Default Changelist" comment="Initial Implementation of humidity&#10;- Removed second cell&#10;- Split up input from Arduino into 2 strings and parse them as int">
-      <change afterPath="$PROJECT_DIR$/src/Testing/displayWebsiteData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Testing/VerySimpleDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Testing/fetchDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Testing/updateTemp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Testing/insertData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/WebSocketWebProject_war_exploded/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/WebSocketWebProject_war_exploded/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Testing/displayWebsiteData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Testing/displayWebsiteData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/websocket/ReadSerial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/websocket/ReadSerial.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/websocket/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/websocket/Repository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/websocket/Websocket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/websocket/Websocket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/websocket/settings.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/websocket/settings.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +59,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="json" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -322,7 +319,7 @@
       <workItem from="1608753191021" duration="1549000" />
       <workItem from="1610025779832" duration="75000" />
       <workItem from="1610025939011" duration="2835000" />
-      <workItem from="1610140590448" duration="1130000" />
+      <workItem from="1610140590448" duration="2694000" />
     </task>
     <task id="LOCAL-00001" summary="Work in progress">
       <created>1589826769532</created>
@@ -428,7 +425,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
