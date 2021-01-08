@@ -40,28 +40,33 @@ public class ReadSerial {
         // Reads serial and sends it to websocket and SQL
         while(scanner.hasNextLine()){
             try{
-                String input = scanner.nextLine();
+                //String input = scanner.nextLine();
+
+                String temp = scanner.nextLine();
                 // Sends temperature 2 digits + humidity 2 digits and split
                 // ex temp = 25, humid 50 = 2550.
                 // then split in middle and store in seperate variables
-                String temp = input.substring(0,input.length()/2);
-                String humid = input.substring((input.length()/2));
+                //String temp = input.substring(0,input.length()/2);
+                //String humid = input.substring((input.length()/2));
 
                 int parseTempInt = Integer.parseInt(temp);
-                int parseHumidInt = Integer.parseInt(humid);
+                //int parseHumidInt = Integer.parseInt(humid);
 
                 String realTimeTemp = "Temperature: " + parseTempInt + " °C";
-                String realTimeHumid = "Humidity: " + parseHumidInt + " °C";
+                //String realTimeHumid = "Humidity: " + parseHumidInt + " °C";
 
+                // Send to websocket
                 session.getBasicRemote().sendText(realTimeTemp);
-                session.getBasicRemote().sendText(realTimeHumid);
+                //session.getBasicRemote().sendText(realTimeHumid);
 
-                // SQL
+                // Send to SQL
                 repository.insertData(parseTempInt);
-                repository.insertData(parseHumidInt);
+
+                //repository.insertData(parseTempInt);
+                //repository.insertData(parseHumidInt);
                 repository.fetchData(session);
             }catch(Exception e){
-                System.out.println("something wrong");
+                System.out.println("Something went wrong");
                 e.printStackTrace();
             }
         }

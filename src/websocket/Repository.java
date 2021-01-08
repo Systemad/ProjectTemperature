@@ -28,29 +28,30 @@ public class Repository {
 
             Statement stmt = con.createStatement();
             //                                                                                  limit 10
-            ResultSet rs = stmt.executeQuery("SELECT * FROM temperaturelog ORDER BY ID DESC LIMIT 1")) {
+            ResultSet rs = stmt.executeQuery("SELECT * FROM data ORDER BY ID DESC LIMIT 1")) {
 
             // make so it fetches last 10 entries from both humidity and temperature to a seperate table
             while (rs.next()) {
                 //                  rs.getInt
                 float temperature = rs.getFloat("temperature");
-                int humidity = rs.getInt("humidity");
+                //int humidity = rs.getInt("humidity");
 
                 String temperatureString = "Temperature" + temperature + " °C";
-                String humidityString = "Humidity: " + humidity + " %";
+                //String humidityString = "Humidity: " + humidity + " %";
 
                 session.getBasicRemote().sendText(temperatureString);
-                session.getBasicRemote().sendText(humidityString);
+                //session.getBasicRemote().sendText(humidityString);
             }
         }
-        catch(SQLException | IOException e ){
+        catch(SQLException | IOException e){
             e.printStackTrace();
         }
     }
 
-    public void insertData(float temperature, int humidity) {
+    public void insertData(float temperature /*int humidity*/) {
 
-        String query = "INSERT INTO temperaturelog(temperature, humidity) VALUES (?)";
+        String query = "INSERT INTO data(temperature) VALUES (?)";
+        //String query = "INSERT INTO data(temperature, humidity) VALUES (?)";
 
         try (Connection con = DriverManager.getConnection(
                 p.getProperty("connectionString"),
@@ -59,7 +60,7 @@ public class Repository {
              PreparedStatement stmt = con.prepareStatement(query))
         {
             stmt.setFloat(1, temperature);
-            stmt.setInt(2, humidity);
+            //stmt.setInt(2, humidity);
             stmt.executeUpdate();
         }
         catch (Exception e) {

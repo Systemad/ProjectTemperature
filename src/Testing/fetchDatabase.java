@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.sql.*;
 import java.util.Properties;
 
-public class VerySimpleDemo {
+public class fetchDatabase {
     public static void main(String[] args) throws FileNotFoundException, IOException {
 
         try {
@@ -18,14 +18,13 @@ public class VerySimpleDemo {
         Properties p = new Properties();
         p.load(new FileInputStream("C:/Users/Dan/IdeaProjects/WebSocketIntelliJAA/src/websocket/settings.properties"));
 
-
         try(Connection con = DriverManager.getConnection(
                 p.getProperty("connectionString"),
                 p.getProperty("name"),
                 p.getProperty("password"));
 
             Statement stmt = con.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM temperaturelog ORDER BY ID DESC LIMIT 1")) {
+            ResultSet rs = stmt.executeQuery("SELECT * FROM alldata ORDER BY ID DESC LIMIT 1")) {
 
             while (rs.next()) {
                 //int id = rs.getInt("id"); // BYT till tid
