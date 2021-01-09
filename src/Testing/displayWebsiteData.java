@@ -12,7 +12,6 @@ public class displayWebsiteData {
                 //String input = scanner.nextLine();
 
                 int temp = ThreadLocalRandom.current().nextInt(1, 29 + 1);
-
                 int humid = ThreadLocalRandom.current().nextInt(1, 99 + 1);
 
                 // Sends temperature 2 digits + humidity 2 digits and split
@@ -27,9 +26,12 @@ public class displayWebsiteData {
                 String realTimeTemp = "Temperature: " + temp + " °C";
                 String realTimeHumid = "Humidity: " + humid + "%";
 
+                String data = temp + " " + humid;
+                session.getBasicRemote().sendText(data);
+
                 // Send to websocket
-                session.getBasicRemote().sendText(realTimeTemp);
-                session.getBasicRemote().sendText(realTimeHumid);
+                //session.getBasicRemote().sendText(realTimeTemp);
+                //session.getBasicRemote().sendText(realTimeHumid);
 
                 Thread.sleep(5000);
             }catch(Exception e){

@@ -11,8 +11,6 @@
     <!-- Material Design fonts -->
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
-
     <style>
         .dialog {
             width: 100%;
@@ -93,16 +91,19 @@
     var ws = new WebSocket("ws://localhost:8080/WebSocketWebProject_war_exploded/ws");
 
     ws.onmessage = function (event) {
-        const splitString =  event.data; //.split('Fetched');
+        const splitString =  event.data; // [temp humidity}
+
+        var y = splitString.split(" "); // y = [temp, humidity]
+
         const dataObj = {};
         const newObj = {...dataObj, temp:splitString[0]};
 
         if(event.data.includes("Temperature")){
-            $("#temperature > .content").html(splitString);
+            $("#temperature > .content").text(y[0]);
         }
 
         if(event.data.includes("Temperature")){
-            $("#humidity > .content").text(splitString);
+            $("#humidity > .content").text(y[1]);
         }
     }
 </script>
