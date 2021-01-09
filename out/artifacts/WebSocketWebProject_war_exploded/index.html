@@ -1,56 +1,92 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html>
 <head>
+    <meta charset="utf-8">
+    <title>Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+    <!-- Material Design fonts -->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+
     <style>
-        body{
-            font-family: 'Jost', sans-serif;
-        }
-        .container{
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
+        .dialog {
             width: 100%;
-            align-items: center;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
         }
-        .header {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-            width: 34%;
-            padding: 10px;
-            font-size: 25px;
+        .dialog > .content {
+            padding: 30px 0;
+            border-radius: 6px 6px 0 0;
+            font-size: 64px;
+            color: rgba(255,255,255, 0.84);
+            text-align: center;
         }
-        .first-cell{
-            width: 40%;
+        .dialog.primary > .content{
+            background: #00aa9a;
         }
-        .second-cell{
-            width: 45%;
+        .dialog.success > .content {
+            background: #59b75c;
+        }
+        .dialog.info > .content {
+            background: #03a9f4;
+        }
+        .dialog.warning > .content {
+            background: #ff5722;
         }
 
-        .body{
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-            width: 40%;
-            padding: 10px;
-            font-size: 23px;
+        .dialog.danger > .content {
+            background: #f44336;
+        }
+        .dialog > .title {
+            background: #FFF;
+            border-radius: 0 0 6px 6px;
+            font-size: 22px;
+            color: rgba(0,0,0, 0.87);
+            text-align: center;
+            padding: 10px 0;
+            /* box-shadow: 0px 10px 8px -10px rgba(0, 0, 0, 0.4) inset; */
+            font-weight: bold;
+        }
+        .nav-tabs {
+            margin-bottom: 20px;
         }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300&display=swap" rel="stylesheet">
-    <meta charset="UTF-8">
-    <title>Monitor</title>
 </head>
-<body style="margin:0;">
 
+<body>
 <div class="container">
-    <div class="header">
-        <div class="first-cell">
-            <p>Temperature</p>
+    <h1>Temperature & Humidity Dashboard</h1>
+    <hr />
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="overview">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="dialog primary fadeIn animated" id="temperature">
+                        <div class="content">00.0 &deg;C</div>
+                        <div class="title">Temperature</div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="dialog info fadeIn animated" id="humidity">
+                        <div class="content">00.0 %</div>
+                        <div class="title">Humidity</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="body" id="data">
-        <div  id="first-cell"></div>
+    <div role="tabpanel" class="tab-pane" id="history">
+        <div id="chartContainer" style="height: 300px; width: 100%;"></div>
     </div>
+</div>
 </div>
 
 <script>
@@ -62,15 +98,11 @@
         const newObj = {...dataObj, temp:splitString[0]};
 
         if(event.data.includes("Temperature")){
-            //const realtime =  document.createElement('p');
-            //realtime.innerHTML = newObj.temp;
-            document.getElementById('first-cell').innerHTML = splitString;
-            pageScroll()
+            $("#temperature > .content").html(splitString);
         }
 
-        function pageScroll() {
-            window.scrollBy(0,1);
-            scrolldelay = setTimeout(pageScroll,10);
+        if(event.data.includes("Temperature")){
+            $("#humidity > .content").text(splitString);
         }
     }
 </script>
