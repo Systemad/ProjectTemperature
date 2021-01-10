@@ -20,6 +20,7 @@ public class Repository {
         }
     }
 
+    // TODO: Refactor to obtain data from SQL, then display it on a table and visualise on the website
     public void fetchData(Session session) {
         try (Connection con = DriverManager.getConnection(
                 p.getProperty("connectionString"),
@@ -34,12 +35,9 @@ public class Repository {
             while (rs.next()) {
                 //                  rs.getInt
                 float temperature = rs.getFloat("temperature");
-                //int humidity = rs.getInt("humidity");
+                int humidity = rs.getInt("humidity");
 
-                String temperatureString = "Temperature" + temperature + " °C";
-                //String humidityString = "Humidity: " + humidity + " %";
-
-                session.getBasicRemote().sendText(temperatureString);
+                session.getBasicRemote().sendText("placeholder");
                 //session.getBasicRemote().sendText(humidityString);
             }
         }

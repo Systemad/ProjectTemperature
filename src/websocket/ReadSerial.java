@@ -40,31 +40,25 @@ public class ReadSerial {
         // Reads serial and sends it to websocket and SQL
         while(scanner.hasNextLine()){
             try{
-                //String input = scanner.nextLine();
+                // Input received [temp humid]
+                String input = scanner.nextLine();
 
-                String temp = scanner.nextLine();
-                // Sends temperature 2 digits + humidity 2 digits and split
-                // ex temp = 25, humid 50 = 2550.
-                // then split in middle and store in seperate variables
-                //String temp = input.substring(0,input.length()/2);
-                //String humid = input.substring((input.length()/2));
+                // Split string into [temp, humid]
+                String[] split = input.split("\\s+");
 
-                int parseTempInt = Integer.parseInt(temp);
-                //int parseHumidInt = Integer.parseInt(humid);
+                // split[0] = temp, split[1] = humid
+                int parseTempInt = Integer.parseInt(split[0]);
+                int parseHumidInt = Integer.parseInt(split[1]);
 
-                String realTimeTemp = "Temperature: " + parseTempInt + " °C";
-                //String realTimeHumid = "Humidity: " + parseHumidInt + " °C";
-
-                // Send to websocket
-                session.getBasicRemote().sendText(realTimeTemp);
-                //session.getBasicRemote().sendText(realTimeHumid);
+                // Send un-split string via websocket and let javaScript handle split string
+                session.getBasicRemote().sendText(input);
 
                 // Send to SQL
                 repository.insertData(parseTempInt);
+                repository.insertData(parseHumidInt);
 
-                //repository.insertData(parseTempInt);
-                //repository.insertData(parseHumidInt);
-                repository.fetchData(session);
+                // TODO: Refactor fetchData function
+                //repository.fetchData(session);
             }catch(Exception e){
                 System.out.println("ReadSerial: Something went wrong");
                 e.printStackTrace();

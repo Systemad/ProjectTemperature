@@ -85,25 +85,23 @@
         <div id="chartContainer" style="height: 300px; width: 100%;"></div>
     </div>
 </div>
-</div>
 
 <script>
     var ws = new WebSocket("ws://localhost:8080/WebSocketWebProject_war_exploded/ws");
 
     ws.onmessage = function (event) {
-        const splitString =  event.data; // [temp humidity}
+        // Received string = [temp humidity]
+        const splitString =  event.data;
 
-        var y = splitString.split(" "); // y = [temp, humidity]
-
-        const dataObj = {};
-        const newObj = {...dataObj, temp:splitString[0]};
+        // Split string [temp, humid]
+        var y = splitString.split(" ");
 
         if(event.data.includes("Temperature")){
-            $("#temperature > .content").text(y[0]);
+            $("#temperature > .content").text(y[0]); // y[0] = temp
         }
 
         if(event.data.includes("Temperature")){
-            $("#humidity > .content").text(y[1]);
+            $("#humidity > .content").text(y[1]); // y[1] = humid
         }
     }
 </script>
