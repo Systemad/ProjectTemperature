@@ -32,8 +32,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d2476e3-ed4e-4cc4-b7b9-f13473a6b2a5" name="Default Changelist" comment="Initial Implementation of humidity&#10;- Removed second cell&#10;- Split up input from Arduino into 2 strings and parse them as int">
+      <change afterPath="$PROJECT_DIR$/web/StyleSheet.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/handler.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/WebSocketWebProject_war_exploded/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/WebSocketWebProject_war_exploded/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -106,6 +107,17 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -305,7 +317,7 @@
       <workItem from="1610025779832" duration="75000" />
       <workItem from="1610025939011" duration="2835000" />
       <workItem from="1610140590448" duration="2694000" />
-      <workItem from="1610224034914" duration="5826000" />
+      <workItem from="1610224034914" duration="6297000" />
     </task>
     <task id="LOCAL-00001" summary="Work in progress">
       <created>1589826769532</created>
