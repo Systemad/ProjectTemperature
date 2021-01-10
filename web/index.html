@@ -92,21 +92,20 @@
 
         // Split string [temp, humid]
         var y = splitString.split(" ");
+        // Set data
+        $("#temperature > .content").text(y[0] + " °C");
+        $("#humidity > .content").text(y[1] + " %");
 
-        // Temperature warning logic handler
+        // Temperature status logic handler
         if(y[0] < 10 || y[0] > 25){
-            $("#temperature > .content").text(y[0] + " °C");
             $("#temperature").removeClass("primary").addClass("danger");
         } else {
-            $("#temperature > .content").text(y[0] + " °C");
             $("#temperature").removeClass("danger").addClass("success");
         }
 
         if(y[1] < 25 || y[1] > 70){
-            $("#humidity > .content").text(y[1] + " %");
             $("#humidity").removeClass("primary").addClass("danger");
         } else {
-            $("#humidity > .content").text(y[1] + " %");
             $("#humidity").removeClass("danger").addClass("success");
         }
     }

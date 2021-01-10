@@ -51,9 +51,6 @@
             /* box-shadow: 0px 10px 8px -10px rgba(0, 0, 0, 0.4) inset; */
             font-weight: bold;
         }
-        .nav-tabs {
-            margin-bottom: 20px;
-        }
     </style>
 </head>
 
@@ -96,20 +93,24 @@
         // Split string [temp, humid]
         var y = splitString.split(" ");
 
+
+        $("#temperature > .content").text(y[0] + " °C");
+        $("#humidity > .content").text(y[1] + " %");
+
         // Temperature warning logic handler
         if(y[0] < 10 || y[0] > 25){
-            $("#temperature > .content").text(y[0] + " °C");
+            //$("#temperature > .content").text(y[0] + " °C");
             $("#temperature").removeClass("primary").addClass("danger");
         } else {
-            $("#temperature > .content").text(y[0] + " °C");
+            //$("#temperature > .content").text(y[0] + " °C");
             $("#temperature").removeClass("danger").addClass("success");
         }
 
         if(y[1] < 25 || y[1] > 70){
-            $("#humidity > .content").text(y[1] + " %");
+            //$("#humidity > .content").text(y[1] + " %");
             $("#humidity").removeClass("primary").addClass("danger");
         } else {
-            $("#humidity > .content").text(y[1] + " %");
+            //$("#humidity > .content").text(y[1] + " %");
             $("#humidity").removeClass("danger").addClass("success");
         }
     }
