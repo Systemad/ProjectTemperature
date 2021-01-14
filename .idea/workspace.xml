@@ -5,6 +5,9 @@
       <artifact name="WebSocketWebProject:war exploded" />
     </artifacts-to-build>
   </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -32,11 +35,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d2476e3-ed4e-4cc4-b7b9-f13473a6b2a5" name="Default Changelist" comment="Initial Implementation of humidity&#10;- Removed second cell&#10;- Split up input from Arduino into 2 strings and parse them as int">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_protobuf_protobuf_java_3_11_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_8_0_22.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Testing/displayWebsiteData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Testing/fetchDatabase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Testing/insertData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/websocket/ReadSerial.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/websocket/Repository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/websocket/Websocket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebSocketWebProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/WebSocketWebProject.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/WebSocketWebProject_war_exploded/handler.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/WebSocketWebProject_war_exploded/handler.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/WebSocketWebProject_war_exploded/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/WebSocketWebProject_war_exploded/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/StyleSheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/StyleSheet.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/WebSocketWebProject/Testing/displayWebsiteData.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/WebSocketWebProject/Testing/fetchDatabase.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/WebSocketWebProject/Testing/insertData.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/WebSocketWebProject/websocket/ReadSerial.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/WebSocketWebProject/websocket/Repository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/WebSocketWebProject/websocket/Websocket.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/WebSocketWebProject/websocket/settings.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Testing/displayWebsiteData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Testing/fetchDatabase.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Testing/insertData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/websocket/ReadSerial.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/websocket/Repository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/websocket/Websocket.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/websocket/settings.properties" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/web/handler.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/handler.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,12 +103,15 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectId" id="1c5Pu2aOvFOWoQBCn02G61sfPjc" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="MANAGE_IGNORE_FILES_PROPERTY" value="true" />
@@ -98,9 +131,22 @@
     <property name="project.structure.side.proportion" value="0.31724137" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat ">
+  <component name="RunManager" selected="Application.insertData">
     <configuration name="VerySimpleDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Testing.VerySimpleDemo" />
+      <module name="WebSocketWebProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Testing.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="insertData" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Testing.insertData" />
       <module name="WebSocketWebProject" />
       <extension name="coverage">
         <pattern>
@@ -281,13 +327,27 @@
         </option>
       </method>
     </configuration>
+    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
+      <deployment />
+      <server-settings />
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.VerySimpleDemo" />
       <item itemvalue="GlassFish Server.GlassFish 5.0.0" />
       <item itemvalue="Tomcat Server.Tomcat " />
+      <item itemvalue="Application.insertData" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.insertData" />
         <item itemvalue="Application.VerySimpleDemo" />
       </list>
     </recent_temporary>
@@ -319,6 +379,8 @@
       <workItem from="1610025939011" duration="2835000" />
       <workItem from="1610140590448" duration="2694000" />
       <workItem from="1610224034914" duration="7038000" />
+      <workItem from="1610441298145" duration="109000" />
+      <workItem from="1610651491007" duration="4287000" />
     </task>
     <task id="LOCAL-00001" summary="Work in progress">
       <created>1589826769532</created>
@@ -444,6 +506,7 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Work in progress" />
     <MESSAGE value="Some changes" />
     <MESSAGE value="Some changesa" />

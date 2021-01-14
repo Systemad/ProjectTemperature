@@ -6,6 +6,7 @@ ws.onmessage = function (event) {
 
     // Split string [temp, humid]
     let y = splitString.split(" ");
+
     // Set data
     $("#temperature > .content").text(y[0] + " °C");
     $("#humidity > .content").text(y[1] + " %");
@@ -30,5 +31,5 @@ ws.onmessage = function (event) {
 
 function newDate(d){
     let today = new Date();
-    return today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate() + " - " + today.getHours() + ":" + today.getMinutes();
+    return today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate() + " - " + today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 }

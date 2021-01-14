@@ -49,13 +49,16 @@ public class ReadSerial {
                 // split[0] = temp, split[1] = humid
                 int parseTempInt = Integer.parseInt(split[0]);
                 int parseHumidInt = Integer.parseInt(split[1]);
+                boolean tempAlert;
+                boolean humidAlert;
+
+                tempAlert = parseTempInt < 10 || parseTempInt > 25;
+                humidAlert = parseHumidInt  < 25 || parseHumidInt > 70;
 
                 // Send un-split string via websocket and let javaScript handle split string
                 session.getBasicRemote().sendText(input);
-
                 // Send to SQL
-                repository.insertData(parseTempInt);
-                repository.insertData(parseHumidInt);
+                repository.insertData(parseTempInt, parseHumidInt, tempAlert, humidAlert);
 
                 // TODO: Refactor fetchData function
                 //repository.fetchData(session);
