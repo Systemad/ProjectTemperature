@@ -11,7 +11,7 @@ ws.onmessage = function (event) {
     $("#temperature > .content").text(obj.temperature + " °C");
     $("#humidity > .content").text(obj.humidity + " %");
 
-    console.log(obj.humidity.toString());
+    console.log(event.data);
 
     // Temperature status logic handler
     if(obj.temperature < 10 || obj.temperature > 25){

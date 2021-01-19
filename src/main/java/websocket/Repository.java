@@ -49,11 +49,6 @@ public class Repository {
     }
 
     public void insertData(JsonObject jsonObject) {
-
-        //@SuppressWarnings( "deprecation" )
-        //JsonObject jsonObject = new JsonParser().parse(message).getAsJsonObject();
-
-        //String query = "INSERT INTO data(temperature) VALUES (?)";
         String query = "INSERT INTO data(temp, humid, tempAlert, humidAlert) VALUES (?, ?, ?, ?)";
 
         try (Connection con = DriverManager.getConnection(

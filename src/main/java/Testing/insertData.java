@@ -10,13 +10,8 @@ public class insertData {
     @SuppressWarnings( "deprecation" )
     public insertData() throws InterruptedException {
         Repository repository = new Repository();
-        int temp;
-        int humid;
-        boolean tempAlert;
-        boolean humidAlert;
-
         while (true) {
-            String jsonString = "{\"device\":\"loc1\",\"temperature\":20,\"humidity\":50,\"tempAlert\":\"false\",\"humidAlert\": \"false\"}";
+            String jsonString = "{\"device\":\"loc1\",\"temperature\":20,\"humidity\":20,\"tempAlert\":\"false\",\"humidAlert\": \"false\"}";
             JsonObject jsonObject = new JsonParser().parse(jsonString).getAsJsonObject();
             repository.insertData(jsonObject);
             Thread.sleep(2000);
