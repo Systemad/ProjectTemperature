@@ -1,28 +1,30 @@
 var ws = new WebSocket("ws://localhost:8080/WebSocketWebProject_war_exploded/ws");
 
 ws.onmessage = function (event) {
-    // Received string = [temp humidity]
-    const splitString =  event.data;
 
-    // Split string [temp, humid]
-    let y = splitString.split(" ");
+    // JSON object
+    let obj = JSON.parse(event.data)
+
+    //let myString = JSON.stringify(obj)
 
     // Set data
-    $("#temperature > .content").text(y[0] + " °C");
-    $("#humidity > .content").text(y[1] + " %");
+    $("#temperature > .content").text(obj.temperature + " °C");
+    $("#humidity > .content").text(obj.humidity + " %");
+
+    console.log(obj.humidity.toString());
 
     // Temperature status logic handler
-    if(y[0] < 10 || y[0] > 25){
+    if(obj.temperature < 10 || obj.temperature > 25){
         let time;
-        $("#temp-alert > .content").text(y[0] + "°C - " + newDate(time));
+        $("#temp-alert > .content").text(obj.temperature + "°C - " + newDate(time));
         $("#temperature").removeClass("primary").addClass("danger");
     } else {
         $("#temperature").removeClass("danger").addClass("success");
     }
 
-    if(y[1] < 25 || y[1] > 70){
+    if(obj.humidity < 25 || obj.humidity > 70){
         let time;
-        $("#humid-alert > .content").text(y[1] + "°% - " + newDate(time));
+        $("#humid-alert > .content").text(obj.humidity + "°% - " + newDate(time));
         $("#humidity").removeClass("primary").addClass("danger");
     } else {
         $("#humidity").removeClass("danger").addClass("success");

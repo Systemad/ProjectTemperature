@@ -1,5 +1,8 @@
 package websocket;
 
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+
 import javax.websocket.Session;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -46,7 +49,10 @@ public class Repository {
         }
     }
 
-    public void insertData(int temperature, int humidity, boolean tempAlert, boolean humidAlert) {
+    public void insertData(JsonObject jsonObject) {
+
+        //@SuppressWarnings( "deprecation" )
+        //JsonObject jsonObject = new JsonParser().parse(message).getAsJsonObject();
 
         //String query = "INSERT INTO data(temperature) VALUES (?)";
         String query = "INSERT INTO data(temp, humid, tempAlert, humidAlert) VALUES (?, ?, ?, ?)";
@@ -57,10 +63,10 @@ public class Repository {
                 p.getProperty("password"));
              PreparedStatement stmt = con.prepareStatement(query))
         {
-            stmt.setInt(1, temperature);
-            stmt.setInt(2, humidity);
-            stmt.setBoolean(3, tempAlert);
-            stmt.setBoolean(4, humidAlert);
+            stmt.setInt(1, jsonObject.get("temperature").getAsInt());
+            stmt.setInt(2, jsonObject.get("humidity").getAsInt());
+            stmt.setBoolean(3, Boolean.parseBoolean(jsonObject.get("tempAlert").getAsString()));
+            stmt.setBoolean(4, Boolean.parseBoolean(jsonObject.get("humidAlert").getAsString()));
             stmt.executeUpdate();
         }
         catch (Exception e) {
