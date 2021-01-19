@@ -23,7 +23,7 @@ public class ReadDatabase {
             ResultSet rs = stmt.executeQuery("SELECT * FROM data ORDER BY ID DESC LIMIT 1")) {
 
             while (rs.next()) {
-                float temperature = rs.getInt("temperature");
+                int temperature = rs.getInt("temperature");
                 int humidity = rs.getInt("humidity");
                 session.getBasicRemote().sendText(temperature + " " + humidity);
             }
