@@ -28,7 +28,6 @@ public class Repository {
                 p.getProperty("password"));
 
             Statement stmt = con.createStatement();
-            //                                                                                  limit 10
             ResultSet rs = stmt.executeQuery("SELECT * FROM data ORDER BY ID DESC LIMIT 1")) {
 
             // make so it fetches last 10 entries from both humidity and temperature to a separate table
