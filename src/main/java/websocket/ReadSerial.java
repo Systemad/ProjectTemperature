@@ -62,7 +62,7 @@ public class ReadSerial {
                 repository.insertData(parseTempInt, parseHumidInt, tempAlert, humidAlert);
 
                 // TODO: Refactor fetchData function
-                //repository.fetchData(session);
+                repository.fetchData(session);
             }catch(Exception e){
                 System.out.println("ReadSerial: Something went wrong");
                 e.printStackTrace();
