@@ -35,18 +35,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d2476e3-ed4e-4cc4-b7b9-f13473a6b2a5" name="Default Changelist" comment="Initial Implementation of humidity&#10;- Removed second cell&#10;- Split up input from Arduino into 2 strings and parse them as int">
-      <change afterPath="$PROJECT_DIR$/src/main/java/websocket/ReadDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/WebSocketWebProject_war_exploded/WEB-INF/classes/Testing/insertData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/WebSocketWebProject_war_exploded/WEB-INF/classes/Testing/insertData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/WebSocketWebProject_war_exploded/WEB-INF/classes/websocket/ReadSerial.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/WebSocketWebProject_war_exploded/WEB-INF/classes/websocket/ReadSerial.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/WebSocketWebProject_war_exploded/WEB-INF/classes/websocket/Repository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/WebSocketWebProject_war_exploded/WEB-INF/classes/websocket/Repository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/WebSocketWebProject_war_exploded/WEB-INF/classes/websocket/settings.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/WebSocketWebProject_war_exploded/handler.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/WebSocketWebProject_war_exploded/handler.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Testing/fetchDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Testing/fetchDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/websocket/ReadSerial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/websocket/ReadSerial.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/websocket/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/websocket/Repository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/websocket/Websocket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/websocket/Websocket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/websocket/ReadDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/websocket/ReadDatabase.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -351,7 +341,7 @@
       <workItem from="1610224034914" duration="7038000" />
       <workItem from="1610441298145" duration="109000" />
       <workItem from="1610651491007" duration="4704000" />
-      <workItem from="1611001837315" duration="3471000" />
+      <workItem from="1611001837315" duration="4365000" />
     </task>
     <task id="LOCAL-00001" summary="Work in progress">
       <created>1589826769532</created>
