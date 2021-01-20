@@ -18,7 +18,7 @@ public class Websocket {
         displayWebsiteData displayWebsiteData = new displayWebsiteData(session);
         //ReadDatabase readDatabase = new ReadDatabase(session);
     }
-    
+
     @SuppressWarnings( "deprecation" )
     @OnMessage
     public void onMessage(Session session, String message){
@@ -27,7 +27,7 @@ public class Websocket {
             JsonObject jsonObject = new JsonParser().parse(message).getAsJsonObject();
             // Message is a JSON object, let the javascript parse it
             session.getBasicRemote().sendText(message);
-            repository.insertData(jsonObject);
+            //repository.insertData(jsonObject);
         } catch (IOException ex) {
             ex.printStackTrace();
         }

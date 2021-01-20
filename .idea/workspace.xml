@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="WebSocketWebProject:war exploded" />
+      <artifact name="dashboard:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
@@ -35,22 +35,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d2476e3-ed4e-4cc4-b7b9-f13473a6b2a5" name="Default Changelist" comment="Initial Implementation of humidity&#10;- Removed second cell&#10;- Split up input from Arduino into 2 strings and parse them as int">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/gson_2_8_6.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/WebSocketWebProject_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/WebSocketWebProject_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_8_0_22.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_8_0_23.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_8_0_20.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/WebSocketWebProject_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/dashboard_war_exploded.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebSocketWebProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/WebSocketWebProject.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/WebSocketWebProject_war_exploded/WEB-INF/classes/Testing/displayWebsiteData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/WebSocketWebProject_war_exploded/WEB-INF/classes/Testing/displayWebsiteData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/WebSocketWebProject_war_exploded/WEB-INF/classes/Testing/insertData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/WebSocketWebProject_war_exploded/WEB-INF/classes/Testing/insertData.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/WebSocketWebProject_war_exploded/WEB-INF/classes/websocket/Repository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/WebSocketWebProject_war_exploded/WEB-INF/classes/websocket/Repository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/WebSocketWebProject_war_exploded/WEB-INF/classes/websocket/Websocket.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/WebSocketWebProject_war_exploded/WEB-INF/classes/websocket/Websocket.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/WebSocketWebProject_war_exploded/handler.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/WebSocketWebProject_war_exploded/handler.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Testing/displayWebsiteData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Testing/displayWebsiteData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Testing/insertData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Testing/insertData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/websocket/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/websocket/Repository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/websocket/Websocket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/websocket/Websocket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/handler.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/handler.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,14 +101,14 @@
     <property name="last_opened_file_path" value="$USER_HOME$/Downloads/gson-2.8.6.jar" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Facets" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.31724137" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RunManager" selected="Application.insertData">
-    <configuration name="VerySimpleDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Testing.VerySimpleDemo" />
+  <component name="RunManager" selected="Tomcat Server.Tomcat ">
+    <configuration name="dashboard" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="Testing.insertData" />
       <module name="WebSocketWebProject" />
       <extension name="coverage">
         <pattern>
@@ -156,7 +147,7 @@
     <configuration name="GlassFish 5.0.0" type="GlassfishConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="GlassFish 5.0.0" ALTERNATIVE_JRE_ENABLED="false">
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/WebSocketWebProject_war_exploded" />
       <deployment>
-        <artifact name="WebSocketWebProject:war exploded">
+        <artifact name="dashboard:war exploded">
           <settings />
         </artifact>
       </deployment>
@@ -220,16 +211,16 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="WebSocketWebProject:war exploded" />
+          <artifact name="dashboard:war exploded" />
         </option>
       </method>
     </configuration>
     <configuration name="Tomcat " type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat " ALTERNATIVE_JRE_ENABLED="false" ALTERNATIVE_JRE_PATH="14" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="WebSocketWebProject:war exploded">
+        <artifact name="dashboard:war exploded">
           <settings>
-            <option name="CONTEXT_PATH" value="/WebSocketWebProject_war_exploded" />
+            <option name="CONTEXT_PATH" value="/dashboard" />
           </settings>
         </artifact>
       </deployment>
@@ -307,12 +298,12 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="WebSocketWebProject:war exploded" />
+          <artifact name="dashboard:war exploded" />
         </option>
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.VerySimpleDemo" />
+      <item itemvalue="Application.dashboard" />
       <item itemvalue="Application.insertData" />
       <item itemvalue="GlassFish Server.GlassFish 5.0.0" />
       <item itemvalue="Tomcat Server.Tomcat " />
@@ -320,7 +311,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.insertData" />
-        <item itemvalue="Application.VerySimpleDemo" />
+        <item itemvalue="Application.dashboard" />
       </list>
     </recent_temporary>
   </component>
@@ -353,7 +344,7 @@
       <workItem from="1610224034914" duration="7038000" />
       <workItem from="1610441298145" duration="109000" />
       <workItem from="1610651491007" duration="4287000" />
-      <workItem from="1611084418006" duration="719000" />
+      <workItem from="1611084418006" duration="5499000" />
     </task>
     <task id="LOCAL-00001" summary="Work in progress">
       <created>1589826769532</created>
