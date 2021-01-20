@@ -35,12 +35,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d2476e3-ed4e-4cc4-b7b9-f13473a6b2a5" name="Default Changelist" comment="Initial Implementation of humidity&#10;- Removed second cell&#10;- Split up input from Arduino into 2 strings and parse them as int">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/WebSocketWebProject_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/dashboard_war_exploded.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/WebSocketWebProject_war_exploded/WEB-INF/classes/Testing/displayWebsiteData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/WebSocketWebProject_war_exploded/WEB-INF/classes/Testing/displayWebsiteData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/WebSocketWebProject_war_exploded/WEB-INF/classes/Testing/insertData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/WebSocketWebProject_war_exploded/WEB-INF/classes/Testing/insertData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/WebSocketWebProject_war_exploded/WEB-INF/classes/websocket/Repository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/WebSocketWebProject_war_exploded/WEB-INF/classes/websocket/Repository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/WebSocketWebProject_war_exploded/WEB-INF/classes/websocket/Websocket.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/WebSocketWebProject_war_exploded/WEB-INF/classes/websocket/Websocket.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/websocket/Websocket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/websocket/Websocket.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -344,7 +339,7 @@
       <workItem from="1610224034914" duration="7038000" />
       <workItem from="1610441298145" duration="109000" />
       <workItem from="1610651491007" duration="4287000" />
-      <workItem from="1611084418006" duration="5499000" />
+      <workItem from="1611084418006" duration="7216000" />
     </task>
     <task id="LOCAL-00001" summary="Work in progress">
       <created>1589826769532</created>

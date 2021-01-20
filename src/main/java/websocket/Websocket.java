@@ -15,8 +15,9 @@ public class Websocket {
     @OnOpen
     public void open(Session session) throws IOException, EncodeException {
         //ReadSerial readSerial = new ReadSerial(session);
-        displayWebsiteData displayWebsiteData = new displayWebsiteData(session);
+        //displayWebsiteData displayWebsiteData = new displayWebsiteData(session);
         //ReadDatabase readDatabase = new ReadDatabase(session);
+        session.getBasicRemote().sendText("Connection Established");
     }
 
     @SuppressWarnings( "deprecation" )
