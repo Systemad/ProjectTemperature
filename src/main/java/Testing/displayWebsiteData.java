@@ -5,7 +5,6 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class displayWebsiteData {
 
-    @SuppressWarnings( "deprecation" )
     public displayWebsiteData(Session session) {
         while(true){
             try{

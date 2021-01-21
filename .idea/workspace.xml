@@ -35,8 +35,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d2476e3-ed4e-4cc4-b7b9-f13473a6b2a5" name="Default Changelist" comment="Initial Implementation of humidity&#10;- Removed second cell&#10;- Split up input from Arduino into 2 strings and parse them as int">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_8_0_23.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/chart.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebSocketWebProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/WebSocketWebProject.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/WebSocketWebProject_war_exploded/handler.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/WebSocketWebProject_war_exploded/handler.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/dashboard_war_exploded/handler.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/dashboard_war_exploded/handler.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/dashboard_war_exploded/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/dashboard_war_exploded/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Testing/displayWebsiteData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Testing/displayWebsiteData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Testing/insertData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Testing/insertData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/websocket/ReadSerial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/websocket/ReadSerial.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/websocket/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/websocket/Repository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/websocket/Websocket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/websocket/Websocket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/handler.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/handler.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,8 +65,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="HTML File" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -93,10 +107,10 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/gson-2.8.6.jar" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/mysql-connector-java-8.0.23/mysql-connector-java-8.0.23.jar" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Facets" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.31724137" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -124,17 +138,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -340,6 +343,8 @@
       <workItem from="1610441298145" duration="109000" />
       <workItem from="1610651491007" duration="4287000" />
       <workItem from="1611084418006" duration="7216000" />
+      <workItem from="1611183841287" duration="10869000" />
+      <workItem from="1611258084603" duration="2516000" />
     </task>
     <task id="LOCAL-00001" summary="Work in progress">
       <created>1589826769532</created>

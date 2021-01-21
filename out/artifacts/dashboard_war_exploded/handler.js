@@ -1,4 +1,4 @@
-var ws = new WebSocket("ws://localhost:8080/WebSocketWebProject_war_exploded/ws");
+var ws = new WebSocket("ws://localhost:8080/dashboard/ws");
 
 ws.onmessage = function (event) {
 
@@ -29,6 +29,7 @@ ws.onmessage = function (event) {
     } else {
         $("#humidity").removeClass("danger").addClass("success");
     }
+
 }
 
 function newDate(d){

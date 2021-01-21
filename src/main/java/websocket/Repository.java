@@ -57,13 +57,14 @@ public class Repository {
                 p.getProperty("password"));
              PreparedStatement stmt = con.prepareStatement(query))
         {
+            //stmt.setString(1, jsonObject.get("device").getAsString());
             stmt.setInt(1, jsonObject.get("temperature").getAsInt());
             stmt.setInt(2, jsonObject.get("humidity").getAsInt());
             stmt.setBoolean(3, Boolean.parseBoolean(jsonObject.get("tempAlert").getAsString()));
             stmt.setBoolean(4, Boolean.parseBoolean(jsonObject.get("humidAlert").getAsString()));
             stmt.executeUpdate();
         }
-        catch (Exception e) {
+        catch (SQLException e) {
             e.printStackTrace();
         }
     }

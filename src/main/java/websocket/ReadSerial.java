@@ -1,14 +1,17 @@
-/*
 package websocket;
 import java.io.IOException;
 import java.util.Scanner;
 import com.fazecast.jSerialComm.*;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+
 import javax.websocket.Session;
 
 public class ReadSerial {
 
     Repository repository = new Repository();
 
+    @SuppressWarnings( "deprecation" )
     public ReadSerial(Session session) {
 
         // Prints ports
@@ -43,26 +46,9 @@ public class ReadSerial {
             try{
                 // Input received [temp humid]
                 String input = scanner.nextLine();
-
-                // Split string into [temp, humid]
-                String[] split = input.split("\\s+");
-
-                // split[0] = temp, split[1] = humid
-                int parseTempInt = Integer.parseInt(split[0]);
-                int parseHumidInt = Integer.parseInt(split[1]);
-                boolean tempAlert;
-                boolean humidAlert;
-
-                tempAlert = parseTempInt < 10 || parseTempInt > 25;
-                humidAlert = parseHumidInt  < 25 || parseHumidInt > 70;
-
-                // Send un-split string via websocket and let javaScript handle split string
+                JsonObject jsonObject = new JsonParser().parse(input).getAsJsonObject();
                 session.getBasicRemote().sendText(input);
-                // Send to SQL
-                repository.insertData(parseTempInt, parseHumidInt, tempAlert, humidAlert);
-
-                // TODO: Refactor fetchData function
-                repository.fetchData(session);
+                repository.insertData(jsonObject);
             }catch(Exception e){
                 System.out.println("ReadSerial: Something went wrong");
                 e.printStackTrace();
@@ -70,4 +56,3 @@ public class ReadSerial {
         }
     }
 }
-*/

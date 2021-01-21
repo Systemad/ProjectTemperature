@@ -14,7 +14,7 @@ public class insertData {
             String jsonString = "{\"device\":\"loc1\",\"temperature\":20,\"humidity\":20,\"tempAlert\":\"false\",\"humidAlert\": \"false\"}";
             JsonObject jsonObject = new JsonParser().parse(jsonString).getAsJsonObject();
             repository.insertData(jsonObject);
-            Thread.sleep(2000);
+            //Thread.sleep(2000);
         }
     }
 

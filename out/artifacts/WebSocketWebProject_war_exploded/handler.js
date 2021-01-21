@@ -1,34 +1,56 @@
 var ws = new WebSocket("ws://localhost:8080/WebSocketWebProject_war_exploded/ws");
 
+
+$(document).ready(function () {
+    showGraph();
+});
+
+
+function showGraph()
+{
+    {
+        function (data)
+            {
+                console.log(data);
+                var name = [];
+                var marks = [];
+
+                for (var i in data) {
+                    name.push(data[i].student_name);
+                    marks.push(data[i].marks);
+                }
+
+                var chartdata = {
+                    labels: name,
+                    datasets: [
+                        {
+                            label: 'Student Marks',
+                            backgroundColor: '#49e2ff',
+                            borderColor: '#46d5f1',
+                            hoverBackgroundColor: '#CCCCCC',
+                            hoverBorderColor: '#666666',
+                            data: marks
+                        }
+                    ]
+                };
+
+                var graphTarget = $("#graphCanvas");
+
+                var barGraph = new Chart(graphTarget, {
+                    type: 'bar',
+                    data: chartdata
+                });
+            };
+    }
+}
+
 ws.onmessage = function (event) {
 
     // JSON object
     let obj = JSON.parse(event.data)
 
-    //let myString = JSON.stringify(obj)
+    $data = obj.temperature;
 
-    // Set data
-    $("#temperature > .content").text(obj.temperature + " °C");
-    $("#humidity > .content").text(obj.humidity + " %");
-
-    console.log(event.data);
-
-    // Temperature status logic handler
-    if(obj.temperature < 10 || obj.temperature > 25){
-        let time;
-        $("#temp-alert > .content").text(obj.temperature + "°C - " + newDate(time));
-        $("#temperature").removeClass("primary").addClass("danger");
-    } else {
-        $("#temperature").removeClass("danger").addClass("success");
-    }
-
-    if(obj.humidity < 25 || obj.humidity > 70){
-        let time;
-        $("#humid-alert > .content").text(obj.humidity + "°% - " + newDate(time));
-        $("#humidity").removeClass("primary").addClass("danger");
-    } else {
-        $("#humidity").removeClass("danger").addClass("success");
-    }
 }
 
 function newDate(d){
