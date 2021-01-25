@@ -11,10 +11,10 @@ public class insertData {
     public insertData() throws InterruptedException {
         Repository repository = new Repository();
         while (true) {
-            String jsonString = "{\"device\":\"loc1\",\"temperature\":20,\"humidity\":20,\"tempAlert\":\"false\",\"humidAlert\": \"false\"}";
+            String jsonString = "{\"device\":\"loc1\",\"temperature\":21,\"humidity\":20,\"tempAlert\":\"false\",\"humidAlert\": \"false\"}";
             JsonObject jsonObject = new JsonParser().parse(jsonString).getAsJsonObject();
             repository.insertData(jsonObject);
-            //Thread.sleep(2000);
+            Thread.sleep(2000);
         }
     }
 

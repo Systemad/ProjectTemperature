@@ -14,7 +14,7 @@ ws.onmessage = function (event) {
     console.log(event.data);
 
     // Temperature status logic handler
-    if(obj.temperature < 10 || obj.temperature > 25){
+    if(obj.tempAlert === 1){
         let time;
         $("#temp-alert > .content").text(obj.temperature + "°C - " + newDate(time));
         $("#temperature").removeClass("primary").addClass("danger");
@@ -22,7 +22,7 @@ ws.onmessage = function (event) {
         $("#temperature").removeClass("danger").addClass("success");
     }
 
-    if(obj.humidity < 25 || obj.humidity > 70){
+    if(obj.humidAlert === 1){
         let time;
         $("#humid-alert > .content").text(obj.humidity + "°% - " + newDate(time));
         $("#humidity").removeClass("primary").addClass("danger");

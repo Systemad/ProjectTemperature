@@ -35,6 +35,6 @@
     <orderEntry type="library" name="jquery" level="application" />
     <orderEntry type="library" name="bootstrap" level="application" />
     <orderEntry type="library" name="Chart" level="application" />
-    <orderEntry type="library" name="mysql-connector-java-8.0.23" level="project" />
+    <orderEntry type="library" name="mysql-connector-java-8.0.23" level="application" />
   </component>
 </module>

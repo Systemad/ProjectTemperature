@@ -16,8 +16,8 @@ public class Repository {
 
     public Repository() {
         try {
+            Class.forName("com.mysql.jdbc.Driver");
             p.load(new FileInputStream("C:\\Users\\Dan\\IdeaProjects\\WebSocketIntelliJ\\src\\main\\java\\websocket\\settings.properties"));
-            Class.forName("com.mysql.cj.jdbc.Driver");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -35,8 +35,7 @@ public class Repository {
 
             // make so it fetches last 10 entries from both humidity and temperature to a separate table
             while (rs.next()) {
-                //                  rs.getInt
-                float temperature = rs.getInt("temperature");
+                int temperature = rs.getInt("temperature");
                 int humidity = rs.getInt("humidity");
 
                 session.getBasicRemote().sendText("placeholder");
@@ -49,19 +48,17 @@ public class Repository {
     }
 
     public void insertData(JsonObject jsonObject) {
-        String query = "INSERT INTO data(temp, humid, tempAlert, humidAlert) VALUES (?, ?, ?, ?)";
+        String query = "INSERT INTO data(device, temp, humid, tempAlert, humidAlert) VALUES (?, ?, ?, ?, ?)";
 
         try (Connection con = DriverManager.getConnection(
-                p.getProperty("connectionString"),
-                p.getProperty("name"),
-                p.getProperty("password"));
+                "jdbc:mysql://localhost:3306/alldata?serverTimezone=UTC&useSSL=false","root","root");
              PreparedStatement stmt = con.prepareStatement(query))
         {
-            //stmt.setString(1, jsonObject.get("device").getAsString());
-            stmt.setInt(1, jsonObject.get("temperature").getAsInt());
-            stmt.setInt(2, jsonObject.get("humidity").getAsInt());
-            stmt.setBoolean(3, Boolean.parseBoolean(jsonObject.get("tempAlert").getAsString()));
-            stmt.setBoolean(4, Boolean.parseBoolean(jsonObject.get("humidAlert").getAsString()));
+            stmt.setString(1, jsonObject.get("device").getAsString());
+            stmt.setInt(2, jsonObject.get("temperature").getAsInt());
+            stmt.setInt(3, jsonObject.get("humidity").getAsInt());
+            stmt.setBoolean(4, Boolean.parseBoolean(jsonObject.get("tempAlert").getAsString()));
+            stmt.setBoolean(5, Boolean.parseBoolean(jsonObject.get("humidAlert").getAsString()));
             stmt.executeUpdate();
         }
         catch (SQLException e) {

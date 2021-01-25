@@ -35,22 +35,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d2476e3-ed4e-4cc4-b7b9-f13473a6b2a5" name="Default Changelist" comment="Initial Implementation of humidity&#10;- Removed second cell&#10;- Split up input from Arduino into 2 strings and parse them as int">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_8_0_23.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/chart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/gson_2_8_6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/gson_2_8_6.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebSocketWebProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/WebSocketWebProject.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/WebSocketWebProject_war_exploded/handler.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/WebSocketWebProject_war_exploded/handler.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/dashboard_war_exploded/handler.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/dashboard_war_exploded/handler.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/dashboard_war_exploded/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/dashboard_war_exploded/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Testing/displayWebsiteData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Testing/displayWebsiteData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Testing/insertData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Testing/insertData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/websocket/ReadSerial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/websocket/ReadSerial.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/websocket/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/websocket/Repository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/websocket/Websocket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/websocket/Websocket.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/handler.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/handler.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +101,7 @@
     <property name="last_opened_file_path" value="$USER_HOME$/Downloads/mysql-connector-java-8.0.23/mysql-connector-java-8.0.23.jar" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.31724137" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -122,6 +113,14 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="Testing.*" />
+          <option name="ENABLED" value="false" />
+        </pattern>
+        <pattern>
+          <option name="PATTERN" value="websocket.ReadSerial" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+        <pattern>
+          <option name="PATTERN" value="websocket.Repository" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -138,6 +137,19 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -308,8 +320,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.insertData" />
         <item itemvalue="Application.dashboard" />
+        <item itemvalue="Application.insertData" />
       </list>
     </recent_temporary>
   </component>
@@ -344,7 +356,9 @@
       <workItem from="1610651491007" duration="4287000" />
       <workItem from="1611084418006" duration="7216000" />
       <workItem from="1611183841287" duration="10869000" />
-      <workItem from="1611258084603" duration="2516000" />
+      <workItem from="1611258084603" duration="3107000" />
+      <workItem from="1611531632097" duration="1734000" />
+      <workItem from="1611535352564" duration="2693000" />
     </task>
     <task id="LOCAL-00001" summary="Work in progress">
       <created>1589826769532</created>
@@ -483,5 +497,15 @@
     <MESSAGE value="Add final change" />
     <MESSAGE value="Initial Implementation of humidity&#10;- Removed second cell&#10;- Split up input from Arduino into 2 strings and parse them as int" />
     <option name="LAST_COMMIT_MESSAGE" value="Initial Implementation of humidity&#10;- Removed second cell&#10;- Split up input from Arduino into 2 strings and parse them as int" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.sql.SQLException" package="java.sql" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

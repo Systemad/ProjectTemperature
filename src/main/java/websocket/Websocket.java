@@ -19,7 +19,7 @@ public class Websocket {
         //ReadDatabase readDatabase = new ReadDatabase(session);
         //session.getBasicRemote().sendText("Connection Established");
     }
-
+    /*
     @SuppressWarnings( "deprecation" )
     @OnMessage
     public void onMessage(Session session, String message){
@@ -33,4 +33,5 @@ public class Websocket {
             ex.printStackTrace();
         }
     }
+     */
 }
