@@ -14,12 +14,13 @@ public class Websocket {
 
     @OnOpen
     public void open(Session session) throws IOException, EncodeException {
-        ReadSerial readSerial = new ReadSerial(session);
+        //ReadSerial readSerial = new ReadSerial(session);
         //displayWebsiteData displayWebsiteData = new displayWebsiteData(session);
         //ReadDatabase readDatabase = new ReadDatabase(session);
         //session.getBasicRemote().sendText("Connection Established");
+        System.out.println("connected");
     }
-    /*
+
     @SuppressWarnings( "deprecation" )
     @OnMessage
     public void onMessage(Session session, String message){
@@ -33,5 +34,4 @@ public class Websocket {
             ex.printStackTrace();
         }
     }
-     */
 }

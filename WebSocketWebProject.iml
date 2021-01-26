@@ -36,5 +36,7 @@
     <orderEntry type="library" name="bootstrap" level="application" />
     <orderEntry type="library" name="Chart" level="application" />
     <orderEntry type="library" name="mysql-connector-java-8.0.23" level="application" />
+    <orderEntry type="library" name="twitter-bootstrap" level="application" />
+    <orderEntry type="library" name="bootstrap-table" level="application" />
   </component>
 </module>
