@@ -13,68 +13,67 @@
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
-
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
     <!-- JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-    
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.js"></script>
+
     <!-- JavaScript handler -->
     <link rel="stylesheet" href="StyleSheet.css">
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Dashboard</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">History</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Graph</a>
-            </li>
-          </ul>
-        </div>
-    </nav>
-
-    <div class="container">
-        <div class="tab-content">
-            <div role="tabpanel" class="tab-pane active" id="overview">
-                <div class="row">
-                    <div class="col-sm-5">
-                        <div class="dialog primary" id="temperature">
-                            <div class="content">00.0 &deg;C</div>
-                            <div class="title">Temperature</div>
-                        </div>
+<br></br>
+<div class="container">
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="overview">
+            <div class="row">
+                <div class="col-sm-5">
+                    <div class="dialog primary" id="temperature">
+                        <div class="content">00.0 &deg;C</div>
+                        <div class="title">Temperature</div>
                     </div>
-                    <div class="col-sm-5">
-                        <div class="dialog primary" id="humidity">
-                            <div class="content">00.0 %</div>
-                            <div class="title">Humidity</div>
-                        </div>
+                </div>
+                <div class="col-sm-5">
+                    <div class="dialog primary" id="humidity">
+                        <div class="content">00.0 %</div>
+                        <div class="title">Humidity</div>
                     </div>
-                    <div class="col-sm-5">
-                        <div class="dialog-info info" id="temp-alert">
-                            <div class="content"></div>
-                            <div class="title">Last Temperature Alert</div>
-                        </div>
+                </div>
+                <div class="col-sm-5">
+                    <div class="dialog-info info" id="temp-alert">
+                        <div class="content"></div>
+                        <div class="title">Latest Temperature Alert</div>
                     </div>
-                    <div class="col-sm-5">
-                        <div class="dialog-info info" id="humid-alert">
-                            <div class="content"></div>
-                            <div class="title">Last Humidity Alert</div>
-                        </div>
+                </div>
+                <div class="col-sm-5">
+                    <div class="dialog-info info" id="humid-alert">
+                        <div class="content"></div>
+                        <div class="title">Latest Humidity Alert</div>
                     </div>
                 </div>
             </div>
+        </div>
     </div>
-
-    <div role="tabpanel" class="tab-pane" id="history">
-        <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+    <div class="table-wrapper-scroll-y my-custom-scrollbar">
+        <table id="table" data-height="350" data-width="250" class="table table-bordered table-striped mb-0">
+            <thead>
+            <tr>
+                <th data-field="device">Device name</th>
+                <th data-field="temperature">Temperature</th>
+                <th data-field="humidity">Humidity</th>
+                <th data-field="tempAlert">Temperature Alert</th>
+                <th data-field="humidAlert">Humidity Alert</th>
+                <th data-field="time">Time</th>
+            </tr>
+            </thead>
+        </table>
     </div>
 </div>
 </body>

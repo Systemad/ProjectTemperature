@@ -12,7 +12,6 @@
     text-align: center;
 }
 
-
 .dialog-info {
     width: 100%;
     border-radius: 4px;
@@ -28,10 +27,21 @@
 }
 
 .dialog-info.info > .content {
+
     background: #03a9f4;
 }
 
+.element.style {
+    height: 350px;
+    padding-bottom: 40.8px;
+}
+
+.row {
+    margin-right: -247px;
+    margin-left: -15px;
+}
 .dialog.primary > .content{
+    padding-top: 20px;
     background: #00aa9a;
 }
 .dialog.success > .content {

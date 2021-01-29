@@ -1,10 +1,11 @@
 package websocket;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 import com.fazecast.jSerialComm.*;
+import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-
 import javax.websocket.Session;
 
 public class ReadSerial {
@@ -49,6 +50,17 @@ public class ReadSerial {
                 JsonObject jsonObject = new JsonParser().parse(input).getAsJsonObject();
                 session.getBasicRemote().sendText(input);
                 repository.insertData(jsonObject);
+
+                //Write JSON file
+                try (FileWriter file = new FileWriter("C:\\Users\\Dan\\IdeaProjects\\WebSocketIntelliJ\\web\\tools.json")) {
+
+                    file.write(jsonObject.toString());
+                    file.flush();
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
             }catch(Exception e){
                 System.out.println("ReadSerial: Something went wrong");
                 e.printStackTrace();
